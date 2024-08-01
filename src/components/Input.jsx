@@ -2,12 +2,12 @@
 import Copy from "./Copy";
 import { useState } from "react";
 
-export default function Input({ Password }) {
+export default function Input({ password }) {
   const [copied, setCopied] = useState(false);
 
   const handleCopyClick = () => {
-    if (Password) {
-      navigator.clipboard.writeText(Password).then(
+    if (password) {
+      navigator.clipboard.writeText(password).then(
         () => {
           setCopied(true);
           setTimeout(() => setCopied(false), 2000);
@@ -21,7 +21,7 @@ export default function Input({ Password }) {
 
   return (
     <div className="relative mb-6">
-      <input className="bg-darkGrey pl-8 py-4 pr-32 text-almostWhite text-3xl" placeholder="P4$5W0rD!" value={Password} readOnly aria-label="Generated password" />
+      <input className="bg-darkGrey pl-8 py-4 pr-32 text-almostWhite text-3xl" placeholder="P4$5W0rD!" value={password} readOnly aria-label="Generated password" />
       {copied && <div className="absolute right-16 top-1/2 -translate-y-1/2 text-neonGreen">Copied</div>}
       <div
         onClick={handleCopyClick}
