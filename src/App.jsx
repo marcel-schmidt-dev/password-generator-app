@@ -67,17 +67,39 @@ function App() {
     <>
       <h1 className="text-grey text-2xl mb-8 text-center">Password Generator</h1>
       <Input password={password} />
-      <div className="bg-darkGrey p-8">
+      <div className="bg-darkGrey p-8 w-full">
         <Slider charLength={charLength} onChange={handleCharLength} />
-        <Checkbox title="Include Uppercase Letters" name="includeUppercase" onChange={handleCheckboxChange} checked={checkedItems.includeUppercase} />
-        <Checkbox title="Include Lowercase Letters" name="includeLowercase" onChange={handleCheckboxChange} checked={checkedItems.includeLowercase} />
-        <Checkbox title="Include Numbers" name="includeNumbers" onChange={handleCheckboxChange} checked={checkedItems.includeNumbers} />
-        <Checkbox title="Include Symbols" name="includeSymbols" onChange={handleCheckboxChange} checked={checkedItems.includeSymbols} />
+        <Checkbox
+          title="Include Uppercase Letters"
+          name="includeUppercase"
+          onChange={handleCheckboxChange}
+          checked={checkedItems.includeUppercase}
+        />
+        <Checkbox
+          title="Include Lowercase Letters"
+          name="includeLowercase"
+          onChange={handleCheckboxChange}
+          checked={checkedItems.includeLowercase}
+        />
+        <Checkbox
+          title="Include Numbers"
+          name="includeNumbers"
+          onChange={handleCheckboxChange}
+          checked={checkedItems.includeNumbers}
+        />
+        <Checkbox
+          title="Include Symbols"
+          name="includeSymbols"
+          onChange={handleCheckboxChange}
+          checked={checkedItems.includeSymbols}
+        />
         <Strength checkedBoxes={checkedBoxes} />
         <button
           onClick={genPassword}
           className={`group w-full h-16 uppercase text-lg flex items-center justify-center transition-all ${
-            buttonError ? "bg-red text-white" : "bg-neonGreen hover:bg-transparent hover:border-2 hover:border-neonGreen hover:text-neonGreen"
+            buttonError
+              ? "bg-red text-white"
+              : "bg-neonGreen hover:bg-transparent hover:border-2 hover:border-neonGreen hover:text-neonGreen"
           }`}>
           <span className="mr-6">{buttonError ? "Please select 1 inclusion" : "Generate"}</span>
           {!buttonError && <Arrow className="fill-darkGrey group-hover:fill-neonGreen" />}

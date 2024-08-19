@@ -21,8 +21,16 @@ export default function Input({ password }) {
 
   return (
     <div className="relative mb-6">
-      <input className="bg-darkGrey pl-8 py-4 pr-32 text-almostWhite text-3xl" placeholder="P4$5W0rD!" value={password} readOnly aria-label="Generated password" />
-      {copied && <div className="absolute right-16 top-1/2 -translate-y-1/2 text-neonGreen">Copied</div>}
+      <input
+        className="bg-darkGrey pl-8 py-4 pr-32 text-almostWhite text-3xl w-full"
+        placeholder="P4$5W0rD!"
+        value={password}
+        readOnly
+        aria-label="Generated password"
+      />
+      {copied && (
+        <div className="absolute right-16 top-1/2 -translate-y-1/2 text-neonGreen">Copied</div>
+      )}
       <div
         onClick={handleCopyClick}
         className="absolute right-8 top-1/2 -translate-y-1/2 fill-neonGreen hover:fill-almostWhite cursor-pointer transition-colors duration-300"
